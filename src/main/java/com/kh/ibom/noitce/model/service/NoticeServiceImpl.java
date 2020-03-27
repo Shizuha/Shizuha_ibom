@@ -31,7 +31,7 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public int updateNotice(HttpServletRequest request, Notice notice, MultipartFile file) throws IllegalStateException, IOException {
 		String savename = file.getOriginalFilename() +"-"+System.currentTimeMillis(); 
-		String dir = request.getSession().getServletContext().getRealPath("resources/down_files");
+		String dir = "D:" + File.separator +"serverdata" + File.separator+"file"+File.separator+"ibom";
 		File target = new File(dir, savename); 
 		file.transferTo(target);
 		
@@ -61,7 +61,7 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public int insertNotice(HttpServletRequest request, Notice notice, MultipartFile file) throws IllegalStateException, IOException {
 		String savename = file.getOriginalFilename() +"-"+System.currentTimeMillis(); 
-		String dir = request.getSession().getServletContext().getRealPath("resources/down_files");
+		String dir = "D:" + File.separator +"serverdata" + File.separator+"file"+File.separator+"ibom";
 		File target = new File(dir, savename); 
 		file.transferTo(target);
 		
